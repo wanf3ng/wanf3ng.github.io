@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>docker起手式</title>
+    <link href="/2021/01/29/docker%E8%B5%B7%E6%89%8B%E5%BC%8F/"/>
+    <url>/2021/01/29/docker%E8%B5%B7%E6%89%8B%E5%BC%8F/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run --name repo alpine/git clone \<br>https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/docker/g</span>etting-statred.git<br>docker cp repo:<span class="hljs-regexp">/git/g</span>etting-started/ .<br></code></pre></td></tr></table></figure><h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">cd</span> getting-started<br><span class="hljs-attribute">docker</span> build -t docker<span class="hljs-number">101</span>tutorial .<br></code></pre></td></tr></table></figure><h3 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs applescript">docker <span class="hljs-built_in">run</span> -dp <span class="hljs-number">80</span>:<span class="hljs-number">80</span> \<br><span class="hljs-comment">--name docker-tutorial docker101tutorial</span><br></code></pre></td></tr></table></figure><h3 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> tag docker<span class="hljs-number">101</span>tutorial wanf<span class="hljs-number">3</span>ng/docker<span class="hljs-number">101</span>tutorial<br><span class="hljs-attribute">docker</span> push wanf<span class="hljs-number">3</span>ng/docker<span class="hljs-number">101</span>tutorial<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/1970/01/01/hello-world/"/>
+    <url>/1970/01/01/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
