@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>使用命令行恢复Windows Defender隔离区</title>
+    <link href="/2021/01/30/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%81%A2%E5%A4%8DWindows-Defender%E9%9A%94%E7%A6%BB%E5%8C%BA/"/>
+    <url>/2021/01/30/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%81%A2%E5%A4%8DWindows-Defender%E9%9A%94%E7%A6%BB%E5%8C%BA/</url>
+    
+    <content type="html"><![CDATA[<h3 id="闲话"><a href="#闲话" class="headerlink" title="闲话"></a>闲话</h3><p>刚装完系统，win10默认打开了Windows Defender（以下简称WD）。在我打开u盘时，直接把我u盘里的一些工具当成病毒杀掉了。最令我迷惑的是我进入WD查杀历史记录时却是空的。隔离区也找不到地方进去…于是，尝试使用命令行恢复。</p><h3 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h3><p>以”管理员身份运行“命令提示符，并进入WD所在的文件夹</p><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs fortran">cd C:\<span class="hljs-function"><span class="hljs-keyword">Program</span></span> Files\Windows Defender<br></code></pre></td></tr></table></figure><h3 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h3><p>接着查看是否存在mpcmdrun.exe这个文件，这个文件可以用来在CMD下控制WD进行病毒扫描、更新病毒库、控制隔离区等操作</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">dir</span> <span class="hljs-regexp">*.exe</span><br></code></pre></td></tr></table></figure><h3 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h3><p>列出系统中所有的隔离项目</p><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dos">mpcmdrun -<span class="hljs-built_in">restore</span> -listall<br></code></pre></td></tr></table></figure><h3 id="步骤四"><a href="#步骤四" class="headerlink" title="步骤四"></a>步骤四</h3><p>恢复所有的隔离项目（谨慎操作），至此WD内的所有隔离项目恢复完毕</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">mpcmdrun -restore -<span class="hljs-keyword">all</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>技术</tag>
+      
+      <tag>Windows Defender</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用docker搭建Hexo</title>
     <link href="/2021/01/29/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAHexo/"/>
     <url>/2021/01/29/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAHexo/</url>
