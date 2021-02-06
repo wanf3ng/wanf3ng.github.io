@@ -73,10 +73,22 @@
     <content type="html"><![CDATA[<h2 id="第一节-information-schema"><a href="#第一节-information-schema" class="headerlink" title="第一节 information_schema"></a>第一节 information_schema</h2><p>在注入中，我们想跨库查询，搜索别的数据库的数据。就需要确定库名-&gt;表名-&gt;字段名，依照这个顺序来搜索到我们想要的数据。需要注意的是查询information_schema的权限需要比较大才可以。 </p><p>通常我们在数据库命令行中获取库名表名字段名的方式是这样的：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">show</span> databases;<br><span class="hljs-keyword">show</span> tables;<br><span class="hljs-keyword">desc</span> [tablename];<br></code></pre></td></tr></table></figure><p>但是在sql注入中，我们是在现有的语句中注入查询，这些被注入的语句一般是select，无法使用show命令，所以我们需要使用select来获取整个数据库中库名表名等信息。而information_schema这个表里刚好存有所有的库名和表名，于是我们就可以通过select查询这个表来获取相关信息。</p><p>库名相关信息在schemata这个表中，所以通过information_schema.schemata查所有数据库：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> information_schema.schemata;<br></code></pre></td></tr></table></figure><p>表名相关信息 在tables这个表中，所以通过information_schema.tables查所有的表名</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> information_schema.tables;<br></code></pre></td></tr></table></figure><p>也可以用上一步查到的库名作为条件来筛选，在后面加上<code>where table_schema=&#39;mysql&#39;</code></p><p>但如果有WAF的话可能会阻止或过滤掉引号，那我们可以用库名的十六进制格式来代替xxx的部分，可以用<code>select hex(&#39;xxx&#39;)</code>来获取十六进制的库名，如“mysql”= “0x6D7973716C”，所以上面的语句变为<code>where table_schema=0x6D7973716C</code>就可以绕过WAF了。</p><p>查字段名在columns这个表中，用以下语句来查字段名：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> column_name <span class="hljs-keyword">from</span> information_schema.columns <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span><span class="hljs-string">&#x27;xx&#x27;</span> <span class="hljs-keyword">and</span> table_name<span class="hljs-operator">=</span><span class="hljs-string">&#x27;xx&#x27;</span>;<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>技术研究</category>
+      
+      <category>网络安全</category>
+      
+    </categories>
+    
     
     <tags>
       
-      <tag>技术</tag>
+      <tag>技术研究</tag>
+      
+      <tag>网络安全</tag>
+      
+      <tag>安全工具</tag>
       
     </tags>
     
