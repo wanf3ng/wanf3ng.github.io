@@ -1,0 +1,171 @@
+<h2 id="About-Sublist3r"><a href="#About-Sublist3r" class="headerlink" title="About Sublist3r"></a>About Sublist3r</h2><p>Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT. It helps penetration testers and bug hunters collect and gather subdomains for the domain they are targeting. Sublist3r enumerates subdomains using many search engines such as Google, Yahoo, Bing, Baidu and Ask. Sublist3r also enumerates subdomains using Netcraft, Virustotal, ThreatCrowd, DNSdumpster and ReverseDNS.</p>
+<p><a href="https://github.com/TheRook/subbrute">subbrute</a> was integrated with Sublist3r to increase the possibility of finding more subdomains using bruteforce with an improved wordlist. The credit goes to TheRook who is the author of subbrute.</p>
+<h2 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h2><p><img src="http://www.secgeek.net/images/Sublist3r.png" alt="Sublist3r" title="Sublist3r in action"></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><pre><code>git clone https://github.com/aboul3la/Sublist3r.git
+</code></pre>
+<h2 id="Recommended-Python-Version"><a href="#Recommended-Python-Version" class="headerlink" title="Recommended Python Version:"></a>Recommended Python Version:</h2><p>Sublist3r currently supports <strong>Python 2</strong> and <strong>Python 3</strong>.</p>
+<ul>
+<li>The recommended version for Python 2 is <strong>2.7.x</strong></li>
+<li>The recommended version for Python 3 is <strong>3.4.x</strong></li>
+</ul>
+<h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies:"></a>Dependencies:</h2><p>Sublist3r depends on the <code>requests</code>, <code>dnspython</code> and <code>argparse</code> python modules.</p>
+<p>These dependencies can be installed using the requirements file:</p>
+<ul>
+<li>Installation on Windows:<pre><code>c:\python27\python.exe -m pip install -r requirements.txt
+</code></pre>
+</li>
+<li>Installation on Linux<pre><code>sudo pip install -r requirements.txt
+</code></pre>
+</li>
+</ul>
+<p>Alternatively, each module can be installed independently as shown below.</p>
+<h4 id="Requests-Module-http-docs-python-requests-org-en-latest"><a href="#Requests-Module-http-docs-python-requests-org-en-latest" class="headerlink" title="Requests Module (http://docs.python-requests.org/en/latest/)"></a>Requests Module (<a href="http://docs.python-requests.org/en/latest/">http://docs.python-requests.org/en/latest/</a>)</h4><ul>
+<li><p>Install for Windows:</p>
+<pre><code>c:\python27\python.exe -m pip install requests
+</code></pre>
+</li>
+<li><p>Install for Ubuntu/Debian:</p>
+<pre><code>sudo apt-get install python-requests
+</code></pre>
+</li>
+<li><p>Install for Centos/Redhat:</p>
+<pre><code>sudo yum install python-requests
+</code></pre>
+</li>
+<li><p>Install using pip on Linux:</p>
+<pre><code>sudo pip install requests
+</code></pre>
+</li>
+</ul>
+<h4 id="dnspython-Module-http-www-dnspython-org"><a href="#dnspython-Module-http-www-dnspython-org" class="headerlink" title="dnspython Module (http://www.dnspython.org/)"></a>dnspython Module (<a href="http://www.dnspython.org/">http://www.dnspython.org/</a>)</h4><ul>
+<li><p>Install for Windows:</p>
+<pre><code>c:\python27\python.exe -m pip install dnspython
+</code></pre>
+</li>
+<li><p>Install for Ubuntu/Debian:</p>
+<pre><code>sudo apt-get install python-dnspython
+</code></pre>
+</li>
+<li><p>Install using pip:</p>
+<pre><code>sudo pip install dnspython
+</code></pre>
+</li>
+</ul>
+<h4 id="argparse-Module"><a href="#argparse-Module" class="headerlink" title="argparse Module"></a>argparse Module</h4><ul>
+<li><p>Install for Ubuntu/Debian:</p>
+<pre><code>sudo apt-get install python-argparse
+</code></pre>
+</li>
+<li><p>Install for Centos/Redhat:</p>
+<pre><code>sudo yum install python-argparse
+</code></pre>
+</li>
+<li><p>Install using pip:</p>
+<pre><code>sudo pip install argparse
+</code></pre>
+</li>
+</ul>
+<p><strong>for coloring in windows install the following libraries</strong></p>
+<pre><code>c:\python27\python.exe -m pip install win_unicode_console colorama
+</code></pre>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><table>
+<thead>
+<tr>
+<th>Short Form</th>
+<th>Long Form</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d</td>
+<td>–domain</td>
+<td>Domain name to enumerate subdomains of</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>–bruteforce</td>
+<td>Enable the subbrute bruteforce module</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>–ports</td>
+<td>Scan the found subdomains against specific tcp ports</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>–verbose</td>
+<td>Enable the verbose mode and display results in realtime</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>–threads</td>
+<td>Number of threads to use for subbrute bruteforce</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>–engines</td>
+<td>Specify a comma-separated list of search engines</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>–output</td>
+<td>Save the results to text file</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>–help</td>
+<td>show the help message and exit</td>
+</tr>
+</tbody></table>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><ul>
+<li>To list all the basic options and switches use -h switch:</li>
+</ul>
+<p><code>python sublist3r.py -h</code></p>
+<ul>
+<li>To enumerate subdomains of specific domain:</li>
+</ul>
+<p><code>python sublist3r.py -d example.com</code></p>
+<ul>
+<li>To enumerate subdomains of specific domain and show only subdomains which have open ports 80 and 443 :</li>
+</ul>
+<p><code>python sublist3r.py -d example.com -p 80,443</code></p>
+<ul>
+<li>To enumerate subdomains of specific domain and show the results in realtime:</li>
+</ul>
+<p><code>python sublist3r.py -v -d example.com</code></p>
+<ul>
+<li>To enumerate subdomains and enable the bruteforce module:</li>
+</ul>
+<p><code>python sublist3r.py -b -d example.com</code></p>
+<ul>
+<li>To enumerate subdomains and use specific engines such Google, Yahoo and Virustotal engines</li>
+</ul>
+<p><code>python sublist3r.py -e google,yahoo,virustotal -d example.com</code></p>
+<h2 id="Using-Sublist3r-as-a-module-in-your-python-scripts"><a href="#Using-Sublist3r-as-a-module-in-your-python-scripts" class="headerlink" title="Using Sublist3r as a module in your python scripts"></a>Using Sublist3r as a module in your python scripts</h2><p><strong>Example</strong></p>
+<pre><code class="python">import sublist3r 
+subdomains = sublist3r.main(domain, no_threads, savefile, ports, silent, verbose, enable_bruteforce, engines)
+</code></pre>
+<p>The main function will return a set of unique subdomains found by Sublist3r</p>
+<p><strong>Function Usage:</strong></p>
+<ul>
+<li><strong>domain</strong>: The domain you want to enumerate subdomains of.</li>
+<li><strong>savefile</strong>: save the output into text file.</li>
+<li><strong>ports</strong>: specify a comma-sperated list of the tcp ports to scan.</li>
+<li><strong>silent</strong>: set sublist3r to work in silent mode during the execution (helpful when you don’t need a lot of noise).</li>
+<li><strong>verbose</strong>: display the found subdomains in real time.</li>
+<li><strong>enable_bruteforce</strong>: enable the bruteforce module.</li>
+<li><strong>engines</strong>: (Optional) to choose specific engines.</li>
+</ul>
+<p>Example to enumerate subdomains of Yahoo.com:</p>
+<pre><code class="python">import sublist3r 
+subdomains = sublist3r.main(&#39;yahoo.com&#39;, 40, &#39;yahoo_subdomains.txt&#39;, ports= None, silent=False, verbose= False, enable_bruteforce= False, engines=None)
+</code></pre>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Sublist3r is licensed under the GNU GPL license. take a look at the <a href="https://github.com/aboul3la/Sublist3r/blob/master/LICENSE">LICENSE</a> for more information.</p>
+<h2 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h2><ul>
+<li><a href="https://github.com/TheRook">TheRook</a> - The bruteforce module was based on his script <strong>subbrute</strong>. </li>
+<li><a href="https://github.com/bitquark">Bitquark</a> - The Subbrute’s wordlist was based on his research <strong>dnspop</strong>. </li>
+</ul>
+<h2 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h2><ul>
+<li>Special Thanks to <a href="https://twitter.com/ibrahim_mosaad">Ibrahim Mosaad</a> for his great contributions that helped in improving the tool.</li>
+</ul>
+<h2 id="Version"><a href="#Version" class="headerlink" title="Version"></a>Version</h2><p><strong>Current version is 1.0</strong></p>
