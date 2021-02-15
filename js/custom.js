@@ -1,1 +1,1 @@
-alert("hello");
+$("head").append('<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z87592GHGJ"><\/script>'),$("head").append("\n    <script defer>\n        window.dataLayer = window.dataLayer || [];\n        function gtag(){dataLayer.push(arguments);}\n        gtag('js', new Date());\n        gtag('config', 'G-Z87592GHGJ');\n    <\/script>\n    ");
