@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wanf3ng.github.io/2021/02/16/Python%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%BC%82%E6%AD%A5IO/</loc>
+    <lastmod>2021-02-21</lastmod>
+  </url>
+  <url>
     <loc>https://wanf3ng.github.io/2021/02/13/Python%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2021-02-14</lastmod>
+    <lastmod>2021-02-16</lastmod>
   </url>
   <url>
     <loc>https://wanf3ng.github.io/2021/02/01/mysql%E6%B3%A8%E5%85%A5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
