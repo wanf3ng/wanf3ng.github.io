@@ -4,9 +4,9 @@
   
   
   <entry>
-    <title>RedReam随笔</title>
-    <link href="/2021/03/23/RedReam%E9%9A%8F%E7%AC%94/"/>
-    <url>/2021/03/23/RedReam%E9%9A%8F%E7%AC%94/</url>
+    <title>RedTeam随笔</title>
+    <link href="/2021/03/23/RedTeam%E9%9A%8F%E7%AC%94/"/>
+    <url>/2021/03/23/RedTeam%E9%9A%8F%E7%AC%94/</url>
     
     <content type="html"><![CDATA[<h3 id="红队随笔"><a href="#红队随笔" class="headerlink" title="红队随笔"></a>红队随笔</h3><h4 id="理想中的红队架构"><a href="#理想中的红队架构" class="headerlink" title="理想中的红队架构"></a>理想中的红队架构</h4><ul><li>渗透实战小组：专注于红队攻击，内部可以按照个人特长，进行任务细分</li><li>信息系统支持与工具研发小组：红队服务器运维，红队匿名工具提供，红队工具研发</li><li>情报与信息收集小组：对于目标的关键情报和信息进行收集</li><li>二进制支持小组：恶意程序的分析，以及后门技术，rootkit技术，免杀对抗技术的研究与支持</li><li>安全研究与代码审计小组：安全研究和代码审计小组</li></ul><p>有条件的话，再加入下面两个部门</p><ul><li>移动安全小组：android cc和ios cc，移动端程序逆向、加解密，后门分析</li><li>报告、文档工作与对接小组：将红队主力从繁重的报告与对接任务中解放出来</li></ul><h4 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h4><p>背景：拿到一个app，需要对app后面的系统进行redteaming</p><p>任务流水线：app分析——信息收集——红队渗透——后门驻留——终端钓鱼——移动终端攻击——取证与监控——报告与总结输出</p><p>任务分解：</p><ul><li>app分析：<strong>移动安全部门</strong>主要分析app中的api地址，以及其他的信息泄露，如果app代码存在加密和混淆，还需要进一步的分析</li><li>信息收集：<strong>情报与信息收集小组</strong>对于该app中包好的域名、ip进行扫描，通过子域名、同站、c段等信息扩展目标资产攻击面，并收集目标站群暴露的信息，以及可能存在的问题。此处，使用到了<strong>信息系统支持与工具研发小组</strong>负责研发的工具，以及运维的匿名服务器</li><li>红队渗透：<strong>渗透实战小组</strong>的红队工程师接入，以<strong>情报与信息小组</strong>提供的信息为切入点，尝试攻击目标站群。倘若获取到目标源码，则交由<strong>安全研究与代码分析小组</strong>进行审计</li><li>后门驻留：在红队渗透获取到相关的权限后，<strong>渗透实战小组</strong>的红队工程师开始使用<strong>信息系统支持与工具研发小组</strong>与<strong>二进制支持小组</strong>合作开发的rootkit植入目标机，并启动相应的持久化后门</li><li>终端钓鱼：<strong>渗透实战小组</strong>的红队工程师将<strong>信息系统支持与工具研发小组</strong>提供的cc载荷以钓鱼的方式植入到特定的位置，等待触发。该cc载荷的免杀由<strong>二进制支持小组</strong>维护</li><li>移动终端攻击：<strong>渗透实战小组</strong>的工程师尝试利用wifi和usb连接，将<strong>移动安全小组</strong>提供的移动端RAT植入到目标移动终端中</li><li>取证与监控：<strong>渗透实战小组</strong>的红队工程师利用在（移动）终端中植入的后门对（移动）终端进行取证和长时间的监控。监控中使用的工具由<strong>移动安全小组</strong>、<strong>信息系统支持与工具研发小组</strong>研发，工具的基础原理由<strong>二进制支持小组</strong>、<strong>安全研究与代码审计小组</strong>研究得到</li><li>报告与总结输出：输出报告和总结由<strong>渗透实战小组</strong>提供粗略版本，由<strong>报告文档与对接小组</strong>负责整理</li></ul>]]></content>
     
